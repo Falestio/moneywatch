@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const morgan = require('morgan')
+
 
 // create express app
 const app = express();
@@ -10,6 +12,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse application/json
 app.use(bodyParser.json())
+
+// morgan logger for debugging
+app.use(morgan('tiny'));
 
 // Connecting to the database
 mongoose.connect('mongodb://localhost:27017/easy-notes', {
