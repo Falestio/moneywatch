@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply p-4 rounded-md cursor-pointer hover:opacity-90
+    }
+}
